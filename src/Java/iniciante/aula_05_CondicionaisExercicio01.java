@@ -1,6 +1,6 @@
 package Java.iniciante;
 
-public class aula_05_CondicionaisExercicio {
+public class aula_05_CondicionaisExercicio01 {
     public static void main(String[] args){
         // Calcular juros de acordo com o salário
         /*  €0 até  € 34,712 Juros de 9.70%
