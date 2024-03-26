@@ -34,7 +34,7 @@ public class aula_05_CondicionaisExercicio02 {
                 break;
         }   
         if(dia_semana == "Sábado" || dia_semana == "Domingo"){
-            System.out.println("Dia: "+dia_semana+" - Não é Dia útil");
+            System.out.println("Dia: "+dia_semana+" - Fim de semana");
         }else{
             System.out.println("Dia: "+dia_semana+" - Dia útil");
         }
