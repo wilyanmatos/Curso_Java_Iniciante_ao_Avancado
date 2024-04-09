@@ -16,16 +16,16 @@ public class aula_07_arrays {
         // Forma diferente de definir e imprimir os arrays
         int[] numeros = new int[3];
         int[] numeros2 = {1,2,3,4,5};
-        /*for (int i = 0; i < nomes.length ; i++) {
+        for (int i = 0; i < nomes.length ; i++) {
             String[] novo_nomes = {nomes[i]};
             System.out.println(novo_nomes[i]);
-        }*/
+        }
         // foreach
-        /*for(int num: numeros2){
+        for(int num: numeros2){
             System.out.println(num);
         }
-        */
-        // array multidimensional
+
+        //array multidimensional
         int lista[][] = new int[3][3];
         lista[0][0] = 1;
         lista[0][1] = 2;
@@ -42,6 +42,13 @@ public class aula_07_arrays {
             for (int j = 0; j < lista[i].length; j++) {
                 System.out.println(lista[i][j]);
             }
+        }
+
+        for(int[] variavel:lista){
+            for (int i = 0; i < lista.length; i++) {
+                System.out.println(variavel[i]);
+            }
+
         }
     }
 
