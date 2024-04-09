@@ -1,12 +1,12 @@
 package Java.POO;
 public class caneta {
-    String modelo;
-    String cor;
-    float ponta;
-    int carga;
-    boolean tampada;
+    public String modelo;
+    public String cor;
+    private float ponta;
+    protected int carga;
+    private boolean tampada;
 
-    void status(){
+    public void status(){
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Uma caneta " + this.cor);
         System.out.println("Ponta: " + this.ponta);
@@ -14,7 +14,7 @@ public class caneta {
         System.out.println("Está tampada? " + this.tampada);
     }
 
-    void rabiscar(){
+    public void rabiscar(){
         if(this.tampada == true){
             System.out.println("ERRO! Não posso rabiscar");
         }else{
@@ -22,10 +22,10 @@ public class caneta {
         }
     }
 
-    void tampar(){
+    protected void tampar(){
         this.tampada = true;
     }
-    void destampar(){
+    protected void destampar(){
         this.tampada = false;
     }
 }
