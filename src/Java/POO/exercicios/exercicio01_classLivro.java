@@ -1,6 +1,6 @@
 package Java.POO.exercicios;
 
-public class aula01_classLivro {
+public class exercicio01_classLivro {
     String nome;
     String idioma;
     int paginas;
