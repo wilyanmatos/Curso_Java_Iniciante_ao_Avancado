@@ -1,31 +1,37 @@
 package Java.POO;
 public class caneta {
     public String modelo;
-    public String cor;
     private float ponta;
-    protected int carga;
-    private boolean tampada;
+    private boolean tampar;
+    public String cor;
 
-    public void status(){
-        System.out.println("Modelo: " + this.modelo);
-        System.out.println("Uma caneta " + this.cor);
-        System.out.println("Ponta: " + this.ponta);
-        System.out.println("Carga: " + this.carga);
-        System.out.println("Está tampada? " + this.tampada);
+    public caneta(String modelo, String cor, float ponta) {
+        this.cor = cor;
+        this.modelo = modelo;
+        this.ponta = ponta;
     }
 
-    public void rabiscar(){
-        if(this.tampada == true){
-            System.out.println("ERRO! Não posso rabiscar");
-        }else{
-            System.out.println("Rabiscando...");
-        }
+    public String getModelo() {
+        return modelo;
     }
 
-    protected void tampar(){
-        this.tampada = true;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
-    protected void destampar(){
-        this.tampada = false;
+
+    public float getPonta() {
+        return ponta;
+    }
+
+    public void setPonta(float ponta) {
+        this.ponta = ponta;
+    }
+
+    public boolean isTampar() {
+        return tampar;
+    }
+
+    public void setTampar(boolean tampar) {
+        this.tampar = tampar;
     }
 }
