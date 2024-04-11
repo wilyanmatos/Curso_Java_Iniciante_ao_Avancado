@@ -2,15 +2,27 @@ package Java.POO.exercicios;
 
 public class exercicio02_ContaBanco {
     public static void main(String[] args) {
-        exercicio02_classContaBanco usr = new exercicio02_classContaBanco();
-        usr.abrirConta("CC");
-        System.out.println("Status atual: " + usr.getStatus());
-        System.out.println("Saldo atual: " + usr.getSaldo());
-        usr.fecharConta();
-        usr.sacar(50);
-        System.out.println("Seu saldo atual é de: " + usr.getSaldo());
-        usr.depositar(100.25f);
-        usr.sacar(25.5f);
-        System.out.println("Seu saldo total é de: " + usr.getSaldo());
+        exercicio02_classContaBanco contaBanco01 = new exercicio02_classContaBanco();
+        contaBanco01.setnumConta(111);
+        contaBanco01.setDono("Jubileu");
+        contaBanco01.abrirConta("CC");
+
+
+        exercicio02_classContaBanco contaBanco02 = new exercicio02_classContaBanco();
+        contaBanco02.setnumConta(222);
+        contaBanco02.setDono("Creuza");
+        contaBanco02.abrirConta("CP");
+
+
+        contaBanco01.depositar(100);
+        contaBanco02.depositar(500);
+
+        contaBanco02.sacar(100);
+        contaBanco01.sacar(150);
+
+        contaBanco01.fecharConta();
+
+        contaBanco01.estadoAtual();
+        contaBanco02.estadoAtual();
     }
 }

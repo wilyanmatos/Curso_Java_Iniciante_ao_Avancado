@@ -7,40 +7,76 @@ public class exercicio02_classContaBanco {
     private float saldo;
     private boolean status;
 
+    public exercicio02_classContaBanco(){
+        this.setStatus(false);
+        this.setSaldo(0);
+    }
+    public void estadoAtual(){
+        System.out.println("------------------------");
+        System.out.println("Tipo da conta: " + this.getTipo());
+        System.out.println("Dono: "+ this.getDono());
+        System.out.println("Número da conta: "+ this.getnumConta());
+        System.out.println("Status: "+ this.getStatus());
+        System.out.println("Saldo: "+ this.getSaldo());
+    }
     public void abrirConta(String tipoConta){
-        setStatus(true);
-        setTipo(tipoConta);
+        this.setStatus(true);
+        this.setTipo(tipoConta);
         if(tipoConta == "CC"){
-            System.out.println("Conta corrente criada!\nVocê recebeu R$50");
-            setSaldo(50);
+            this.setSaldo(this.getSaldo() + 50);
+            System.out.println("Conta corrente aberta com sucesso");
         }else if(tipoConta == "CP"){
-            System.out.println("Conta poupança criada!\nVocê recebeu R$150");
-            setSaldo(150);
+            this.setSaldo(this.getSaldo() + 150);
+            System.out.println("Conta poupança aberta com sucesso");
         }else{
             System.out.println("ERRO! Por favor informe novamente o tipo de conta");
         }
     }
     public void fecharConta(){
-        if (getSaldo() > 0){
+        if (this.getSaldo() > 0){
             System.out.println("ERRO! Não é possível fechar a conta pois ainda possui valores");
+        }else if (this.getSaldo() < 0){
+            System.out.println("Conta não pode ser fechada pois possue debito");
         }else{
-            System.out.println("Conta fechada");
-            setStatus(false);
+            this.setStatus(false);
+            System.out.println("Conta fechada com sucesso!");
         }
     }
     public void depositar(float novoDeposito){
-        this.saldo += novoDeposito;
-        System.out.println("Você depositou: "+ novoDeposito);
-    }
-    public void sacar(float novoSaque){
-        if(novoSaque > getSaldo()){
-            System.out.println("ERRO! Saque maior que o saldo!");
-        }else{
-            System.out.println("Você sacou R$" + novoSaque);
-            setSaldo(-novoSaque);
+        if(this.getStatus()) {
+            setSaldo(this.getSaldo() + novoDeposito);
+            System.out.println(this.getDono()+" depositou: R$"+ novoDeposito);
+        }else {
+            System.out.println("Sua conta não está aberta");
         }
     }
-    public void pagarMensal(){}
+    public void sacar(float novoSaque){
+        if(this.getStatus()){
+            if(novoSaque <= this.getSaldo()) {
+                System.out.println("Saque de R$" + novoSaque +" realizado na conta ["+this.getDono()+"]");
+                setSaldo(this.getSaldo() - novoSaque);
+            }else{
+                System.out.println("Saldo insuficiente");
+            }
+        }else{
+            System.out.println("A conta não está aberta");
+            }
+        }
+
+    public void pagarMensal(){
+        float cobrarMensalidade = 0;
+        if(this.getTipo() == "CC"){
+            cobrarMensalidade = 12;
+        } else if (this.getTipo() == "CP") {
+            cobrarMensalidade = 20;
+        }
+        if(getStatus()){
+            this.setSaldo(this.getSaldo() - cobrarMensalidade);
+            System.out.println("A mensalidade da conta "+ this.getTipo()+" foi paga: R$"+cobrarMensalidade);
+        }else{
+            System.out.println("ERRO! A conta não está aberta");
+        }
+    }
 
     public int getnumConta(){
         return this.numConta;
@@ -54,13 +90,17 @@ public class exercicio02_classContaBanco {
     public void setTipo(String novoTipo){
         this.tipo = novoTipo;
     }
-    public void getDono(){}
-    public void setDono(){}
+    public String getDono(){
+        return this.dono;
+    }
+    public void setDono(String novoDono){
+        this.dono = novoDono;
+    }
     public float getSaldo(){
         return this.saldo;
     }
     public void setSaldo(float novoValor){
-        this.saldo += novoValor;
+        this.saldo = novoValor;
     }
     public boolean getStatus(){
         return this.status;
