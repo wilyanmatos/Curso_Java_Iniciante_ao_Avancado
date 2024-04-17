@@ -1,4 +1,4 @@
-package Java.POO.exercicios;
+package Java.POO.exercicios.exercicio01;
 
 public class exercicio01_classLivro {
     String nome;
@@ -8,7 +8,7 @@ public class exercicio01_classLivro {
     boolean aberto;
 
     void abrir_livro(){
-        if (aberto == false){
+        if (!aberto){
             System.out.println("O livro '"+this.nome+"' foi aberto");
             this.aberto = true;
         }else{
@@ -16,7 +16,7 @@ public class exercicio01_classLivro {
         }
     }
     void ler(){
-        if(aberto == true){
+        if(aberto){
             System.out.println("Lendo livro...");
         }else{
             System.out.println("ERRO! O livro não está aberto");

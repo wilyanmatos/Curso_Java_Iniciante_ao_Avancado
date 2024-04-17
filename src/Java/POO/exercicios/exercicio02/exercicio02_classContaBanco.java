@@ -1,4 +1,4 @@
-package Java.POO.exercicios;
+package Java.POO.exercicios.exercicio02;
 
 public class exercicio02_classContaBanco {
     public int numConta;
@@ -22,10 +22,10 @@ public class exercicio02_classContaBanco {
     public void abrirConta(String tipoConta){
         this.setStatus(true);
         this.setTipo(tipoConta);
-        if(tipoConta == "CC"){
+        if(tipoConta.equals("CC")){
             this.setSaldo(this.getSaldo() + 50);
             System.out.println("Conta corrente aberta com sucesso");
-        }else if(tipoConta == "CP"){
+        }else if(tipoConta.equals("CP")){
             this.setSaldo(this.getSaldo() + 150);
             System.out.println("Conta poupança aberta com sucesso");
         }else{

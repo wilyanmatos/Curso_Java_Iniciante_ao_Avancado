@@ -1,6 +1,6 @@
-package Java.POO.exercicios;
+package Java.POO.exercicios.exercicio02;
 
-public class exercicio02_ContaBanco {
+public class exercicio02_contaBanco {
     public static void main(String[] args) {
         exercicio02_classContaBanco contaBanco01 = new exercicio02_classContaBanco();
         contaBanco01.setnumConta(111);

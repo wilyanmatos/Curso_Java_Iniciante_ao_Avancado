@@ -1,6 +1,6 @@
-package Java.POO.exercicios;
+package Java.POO.exercicios.exercicio01;
 
-public class exercicio01_exercicioArmazenadoLivros {
+public class exercicio01_ArmazenadoLivros {
     public static void main(String[] args) {
         // Crie uma classe com objetos concretos
         exercicio01_classLivro livro_01 = new exercicio01_classLivro();
